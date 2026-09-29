@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b7a3a">
+  <title>Conversation – The Falcons | الصفحة 17</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+  <header class="topbar">
+    <div class="topbar__brand">🏀 <span dir="ltr">The Falcons</span></div>
+    <nav class="chips" id="chips" aria-label="أقسام الدرس">
+      <a href="#intro" data-sec="intro">المقدمة</a>
+      <a href="#dialogue" data-sec="dialogue">الحوار</a>
+      <a href="#realtalk" data-sec="realtalk">Real Talk</a>
+      <a href="#ending" data-sec="ending">Your Ending</a>
+      <a href="#about" data-sec="about">الفهم</a>
+      <a href="#turn" data-sec="turn">Your Turn</a>
+      <a href="#quiz" data-sec="quiz">الاختبار</a>
+    </nav>
+    <button class="btn btn--ghost" id="motionBtn" type="button" aria-pressed="false">تقليل الحركة</button>
+  </header>
+
+  <main>
+    <!-- Intro -->
+    <section class="card card--hero" id="intro">
+      <div class="hero__text">
+        <p class="tag">اللغة الإنجليزية · الصفحة 17</p>
+        <h1 dir="ltr">Conversation</h1>
+        <p class="lead" dir="ltr">The Falcons: how did the team start and grow?</p>
+        <p class="ar">في هذا الدرس تقرأ مقابلة بين مراسل (Reporter) وخالد (Khalid) عن بداية فريق كرة السلة The Falcons وتطوره، ثم تتدرّب على المفردات وتجيب عن الأسئلة.</p>
+        <ul class="goals" dir="ltr">
+          <li>Read and follow a short interview.</li>
+          <li>Learn 4 useful expressions.</li>
+          <li>Answer questions and act out your own interview.</li>
+        </ul>
+      </div>
+      <div class="court" id="court" aria-hidden="true">
+        <svg viewBox="0 0 400 240" class="court__svg" focusable="false">
+          <rect x="4" y="4" width="392" height="232" rx="10" class="c-floor"/>
+          <rect x="4" y="4" width="392" height="232" rx="10" class="c-line" fill="none"/>
+          <line x1="200" y1="4" x2="200" y2="236" class="c-line"/>
+          <circle cx="200" cy="120" r="34" class="c-line" fill="none"/>
+          <rect x="4" y="70" width="70" height="100" class="c-line" fill="none"/>
+          <rect x="326" y="70" width="70" height="100" class="c-line" fill="none"/>
+          <path d="M74 88 A32 32 0 0 1 74 152" class="c-line" fill="none"/>
+          <path d="M326 88 A32 32 0 0 0 326 152" class="c-line" fill="none"/>
+          <line x1="14" y1="108" x2="14" y2="132" class="c-hoop"/>
+          <circle cx="24" cy="120" r="9" class="c-hoop" fill="none"/>
+          <line x1="386" y1="108" x2="386" y2="132" class="c-hoop"/>
+          <circle cx="376" cy="120" r="9" class="c-hoop" fill="none"/>
+          <g id="ball" class="ball">
+            <circle r="11" cx="0" cy="0" class="ball__body"/>
+            <path d="M-11 0H11M0 -11V11M-8 -8Q0 0 -8 8M8 -8Q0 0 8 8" class="ball__seam" fill="none"/>
+          </g>
+        </svg>
+        <div class="scoreboard" dir="ltr" aria-label="Scoreboard">
+          <div><span class="sb__label">FALCONS</span><b id="sbScore">0</b></div>
+          <div><span class="sb__label">DIVISION</span><b id="sbDiv">B</b></div>
+          <div><span class="sb__label">LINE</span><b id="sbLine">0/9</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dialogue -->
+    <section class="card" id="dialogue">
+      <h2>الحوار <span class="en" dir="ltr">Conversation</span></h2>
+      <div class="controls" role="group" aria-label="التحكم في الحوار">
+        <button class="btn btn--primary" id="playBtn" type="button">▶ تشغيل</button>
+        <button class="btn" id="pauseBtn" type="button" disabled>⏸ إيقاف مؤقت</button>
+        <button class="btn" id="replayBtn" type="button">↻ إعادة العرض</button>
+        <label class="toggle"><input type="checkbox" id="arToggle" checked> الشرح العربي</label>
+        <label class="speed">السرعة
+          <select id="speedSel">
+            <option value="1.4">بطيء</option>
+            <option value="1" selected>عادي</option>
+            <option value="0.7">سريع</option>
+          </select>
+        </label>
+      </div>
+      <p class="note">التشغيل هنا مرئي فقط: يتم تمييز السطر الحالي تلقائيًا (لا يوجد ملف صوتي). اضغط على أي سطر للانتقال إليه.</p>
+      <ol class="dialogue" id="dialogueList" dir="ltr"></ol>
+    </section>
+
+    <!-- Real Talk -->
+    <section class="card card--blue" id="realtalk">
+      <h2>Real Talk <span class="ar-inline">تعابير مفيدة</span></h2>
+      <div class="rt-grid" dir="ltr" id="rtGrid"></div>
+      <p class="note">اضغط على البطاقة لقلبها ورؤية المعنى بالعربية.</p>
+    </section>
+
+    <!-- Your Ending -->
+    <section class="card card--green" id="ending">
+      <h2>Your Ending</h2>
+      <p class="q" dir="ltr">What do you think Khalid’s answer was?</p>
+      <p class="ar">في نهاية الحوار سأل المراسل: When did your first big break come? اختر النهاية التي تتوقعها.</p>
+      <div class="options" id="endingOptions" dir="ltr" role="radiogroup" aria-label="Your Ending"></div>
+      <div class="idea" id="ideaBox" hidden dir="ltr">
+        <label for="ideaInput">Your idea:</label>
+        <input id="ideaInput" type="text" placeholder="Write your ending here…" autocomplete="off">
+      </div>
+      <p class="feedback" id="endingFeedback" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- About the Conversation -->
+    <section class="card" id="about">
+      <h2>About the Conversation <span class="ar-inline">أسئلة الفهم</span></h2>
+      <ol class="qa" id="qaList" dir="ltr"></ol>
+    </section>
+
+    <!-- Your Turn -->
+    <section class="card card--orange" id="turn">
+      <h2>Your Turn</h2>
+      <div dir="ltr" class="turn__en">
+        <p><b>Role-play with a partner.</b> Make up a “fake” interview with a famous athlete. Ask about how the person’s career started. Present your interview to the class.</p>
+        <ol class="steps">
+          <li><b>Student A</b> is the Reporter. <b>Student B</b> is the athlete.</li>
+          <li>Choose a sport and an athlete. Make up the answers.</li>
+          <li>Ask 4–5 questions about the beginning of the career.</li>
+          <li>Switch roles, then present to the class.</li>
+        </ol>
+      </div>
+      <div class="ar">
+        <b>بالعربية:</b> مثّلا مقابلة خيالية قصيرة مع رياضي مشهور. يسأل الطالب الأول (المراسل) عن بداية مسيرته، ويجيب الثاني كأنه الرياضي، ثم بدّلا الأدوار وقدّما المقابلة للفصل.
+      </div>
+      <h3 dir="ltr">Question starters</h3>
+      <div class="starters" dir="ltr" id="starters"></div>
+      <div class="timer">
+        <div class="timer__time" id="timerTime" dir="ltr">02:00</div>
+        <button class="btn btn--primary" id="timerStart" type="button">Start timer</button>
+        <button class="btn" id="timerReset" type="button">Reset</button>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="card" id="quiz">
+      <h2>الاختبار <span class="en" dir="ltr">Quiz</span></h2>
+      <div class="quiz-tabs" role="tablist">
+        <button class="tab is-active" role="tab" id="tabMcq" aria-selected="true" data-target="mcq" type="button">Multiple Choice</button>
+        <button class="tab" role="tab" id="tabTf" aria-selected="false" data-target="tf" type="button">True / False</button>
+      </div>
+      <div id="mcq" class="quiz-pane" dir="ltr"></div>
+      <div id="tf" class="quiz-pane" dir="ltr" hidden></div>
+      <div class="score" id="scoreBox" role="status" aria-live="polite">Score: 0 / 0</div>
+      <button class="btn" id="quizReset" type="button">إعادة الاختبار</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Conversation · Page 17 · موقع تعليمي تفاعلي</p>
+  </footer>
+
+  <button class="totop" id="toTop" type="button" aria-label="العودة إلى أعلى الصفحة" hidden>↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

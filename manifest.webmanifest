@@ -1,0 +1,14 @@
+{
+  "name": "Conversation – The Falcons",
+  "short_name": "Falcons",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf6ee",
+  "theme_color": "#0b7a3a",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
